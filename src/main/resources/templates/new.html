@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>New order</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class = "container">
+     <h1>Delivery management system</h1>
+     <hr>
+  <h2>Save order</h2>
+  <form action= "#" th:action = "@{/saveParcel}" th:object = "${parcel}" method="POST">
+    <input type = "text" th:field = "*{sender.name}" placeholder="Sender name" class="form-control mb-4 col-4">
+    <input type = "text" th:field = "*{sender.city}" placeholder="Sender city" class="form-control mb-4 col-4">
+    <input type = "text" th:field = "*{sender.address}" placeholder="Sender address" class="form-control mb-4 col-4">
+
+  <input type = "text" th:field = "*{parcelWeight}" placeholder="Parcel Weight" class="form-control mb-4 col-4">
+  <input type = "text" th:field = "*{sentDate}" placeholder="Date of dispatch" class="form-control mb-4 col-4" pattern="\d{2}\.\d{2}\.\d{2}" title="dd.MM.yy">
+
+  <input type = "text" th:field = "*{receiver.name}" placeholder="Receiver name" class="form-control mb-4 col-4">
+  <input type = "text" th:field = "*{receiver.city}" placeholder="Receiver city" class="form-control mb-4 col-4">
+  <input type = "text" th:field = "*{receiver.address}" placeholder="Receiver address" class="form-control mb-4 col-4">
+      <button type="submit" class="btn btn-info col-2"> Save Employee</button>
+  </form>
+
+<hr>
+    <a th:href="@{/list}"> Back to Employee List</a>
+
+</div>
+
+</body>
+</html>
